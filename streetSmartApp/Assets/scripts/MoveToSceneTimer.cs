@@ -14,7 +14,7 @@ public class MoveToSceneTimer : MonoBehaviour {
 
         if(time <= 0.0f)
         {
-            timerEnded(targetScene)
+            timerEnded(targetScene);
         }
 
 
