@@ -1,16 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/splashScreen.unity
+- path: Assets/Scenes/Links.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/scenes/login.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/vehicle info(home).unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/edit vehicle info.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/links.unity
-  isLoaded: 0
-  isActive: 0
