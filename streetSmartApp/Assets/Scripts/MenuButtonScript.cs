@@ -6,27 +6,27 @@ public class MenuButtonScript : MonoBehaviour
 {
 	public void LoadEditVehicleInfo()
 	{
-		SceneManager.LoadScene("EditVehicleInfo");
+		SceneManager.LoadScene("EditVehicleInfo", LoadSceneMode.Single);
 	}
 
     public void LoadLinks()
     {
-        SceneManager.LoadScene("Links");
+        SceneManager.LoadScene("links", LoadSceneMode.Single);
     }
 
     public void LoadLogin()
     {
-        SceneManager.LoadScene("Login");
+        SceneManager.LoadScene("login", LoadSceneMode.Single);
     }
 
     public void LoadSplashScreen()
     {
-        SceneManager.LoadScene("SplashScreen");
+        SceneManager.LoadScene("splashScreen", LoadSceneMode.Single);
     }
 
     public void LoadVehicleInfo()
     {
-        SceneManager.LoadScene("VehicleInfo");
+        SceneManager.LoadScene("VehicleInfo", LoadSceneMode.Single);
     }
 
     public void Quit()
