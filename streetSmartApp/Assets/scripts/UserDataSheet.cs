@@ -19,7 +19,7 @@ public class UserDataSheet : MonoBehaviour {
         catch
         {   
             //create the data file if it dose not already exist 
-            StreamWriter logeInInfo = File.CreateText("logInInfo.txt");
+            //StreamWriter logeInInfo = File.CreateText("logInInfo.txt");
         }
 	}
 	
