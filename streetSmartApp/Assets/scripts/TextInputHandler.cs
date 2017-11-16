@@ -30,21 +30,5 @@ public void logIn()
         file.Close();
     }
 
-    public void populateDropDown(Dropdown dropdown)
-    {
-        XmlDocument doc = new XmlDocument();
-        doc.Load("vehicleMaintenanceSchedules");
-        Debug.Log("loaded maintenance");
-
-        XmlNodeList nodeList = doc.SelectNodes("Generic_Vehicles/Vehicle_Type");
-        List<string> stringList = new List<string>();
-        foreach(XmlNode node in nodeList)
-        {
-            stringList.Add(node.Attributes.GetNamedItem("type").Value);
-        }
-        dropdown.AddOptions(stringList);
-
-    }
-
 }
 

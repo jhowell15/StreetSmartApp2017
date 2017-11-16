@@ -11,7 +11,7 @@ public class dropdownContoller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         XmlDocument doc = new XmlDocument();
-        doc.Load("C:\\Users\\Jacob Howell\\Documents\\GitHub\\StreetSmartApp2017\\streetSmartApp\\vehicleMaintenanceSchedules_GENERIC.xml");
+        doc.Load("vehicleMaintenanceSchedules_GENERIC.xml");
         Debug.Log("loaded generic maintenance");
 
         XmlNodeList nodeList = doc.SelectNodes("/Generic_Vehicles/Vehicle_Type");
@@ -22,7 +22,7 @@ public class dropdownContoller : MonoBehaviour {
         }
         dropdown.AddOptions(stringList);
 
-        doc.Load("C:\\Users\\Jacob Howell\\Documents\\GitHub\\StreetSmartApp2017\\streetSmartApp\\vehicleMaintenanceSchedules_SPECIFIC.xml");
+        doc.Load("vehicleMaintenanceSchedules_SPECIFIC.xml");
         Debug.Log("loaded specific maintenance");
 
         nodeList = doc.SelectNodes("/Specific_Vehicles/Vehicle");
