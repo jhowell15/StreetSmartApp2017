@@ -7,7 +7,8 @@ using UnityEngine.UI;
 using System.Xml;
 
 
-public class TextInputHandler : MonoBehaviour {
+public class TextInputHandler : MonoBehaviour
+{
 
     //set up the different strings that will be set 
     public InputField userNameInput;
@@ -16,20 +17,22 @@ public class TextInputHandler : MonoBehaviour {
     public InputField avgMilesInput;
     public InputField emailInput;
     public Dropdown vehicleTypeInput;
-	
+
     /// <summary>
     /// write all the data to a file
     /// </summary>
-public void logIn()
+    public void logIn()
     {
         //string userName = userNameInput.text;
-        
+
 
         //write to the file 
-        StreamWriter file = new StreamWriter("logInInfo.txt");
+        string filePath = Application.persistentDataPath + "/logInInfo.txt";
+        StreamWriter file = new StreamWriter(filePath);
         int vehicleTypeInt = vehicleTypeInput.value;
-        file.WriteLine(userNameInput.text +";"+emailInput.text + ";" +addressInput.text + ";" +totalMilesInput.text + ";" +avgMilesInput.text + ";" + vehicleTypeInput.options[vehicleTypeInt].text.ToString());
+        file.WriteLine(userNameInput.text + ";" + emailInput.text + ";" + addressInput.text + ";" + totalMilesInput.text + ";" + avgMilesInput.text + ";" + vehicleTypeInput.options[vehicleTypeInt].text.ToString());
         file.Close();
+        Debug.Log("wrote file");
     }
 
 }

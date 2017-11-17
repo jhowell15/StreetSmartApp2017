@@ -5,13 +5,16 @@ using System.Xml;
 //using UnityEditor;
 using UnityEngine.UI;
 
-public class dropdownContoller : MonoBehaviour {
+public class dropdownContoller : MonoBehaviour
+{
     public Dropdown dropdown;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         XmlDocument doc = new XmlDocument();
-        doc.Load("vehicleMaintenanceSchedules_GENERIC.xml");
+        string filepath = Application.persistentDataPath + "/vehicleMaintenanceSchedules_GENERIC.xml";
+        doc.Load(filepath);
         Debug.Log("loaded generic maintenance");
 
         XmlNodeList nodeList = doc.SelectNodes("/Generic_Vehicles/Vehicle_Type");
@@ -21,8 +24,10 @@ public class dropdownContoller : MonoBehaviour {
             stringList.Add(node.Attributes.GetNamedItem("type").Value);
         }
         dropdown.AddOptions(stringList);
+        filepath = "";
 
-        doc.Load("vehicleMaintenanceSchedules_SPECIFIC.xml");
+        filepath = Application.persistentDataPath + "/vehicleMaintenanceSchedules_SPECIFIC.xml";
+        doc.Load(filepath);
         Debug.Log("loaded specific maintenance");
 
         nodeList = doc.SelectNodes("/Specific_Vehicles/Vehicle");
@@ -33,9 +38,10 @@ public class dropdownContoller : MonoBehaviour {
         }
         dropdown.AddOptions(stringList);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
