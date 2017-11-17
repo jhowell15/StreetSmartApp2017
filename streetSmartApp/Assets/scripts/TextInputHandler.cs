@@ -15,6 +15,7 @@ public class TextInputHandler : MonoBehaviour {
     public InputField totalMilesInput;
     public InputField avgMilesInput;
     public InputField emailInput;
+    public Dropdown vehicleTypeInput;
 	
     /// <summary>
     /// write all the data to a file
@@ -26,7 +27,8 @@ public void logIn()
 
         //write to the file 
         StreamWriter file = new StreamWriter("logInInfo.txt");
-        file.WriteLine(userNameInput.text +";"+emailInput.text + ";" +addressInput.text + ";" +totalMilesInput.text + ";" +avgMilesInput.text);
+        int vehicleTypeInt = vehicleTypeInput.value;
+        file.WriteLine(userNameInput.text +";"+emailInput.text + ";" +addressInput.text + ";" +totalMilesInput.text + ";" +avgMilesInput.text + ";" + vehicleTypeInput.options[vehicleTypeInt].text.ToString());
         file.Close();
     }
 

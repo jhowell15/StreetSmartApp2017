@@ -2733,6 +2733,7 @@ MonoBehaviour:
   totalMilesInput: {fileID: 540347852}
   avgMilesInput: {fileID: 487872810}
   emailInput: {fileID: 364581650}
+  vehicleTypeInput: {fileID: 177681998}
 --- !u!1 &1667535656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,6 +3345,7 @@ MonoBehaviour:
   totalMilesInput: {fileID: 0}
   avgMilesInput: {fileID: 0}
   emailInput: {fileID: 0}
+  vehicleTypeInput: {fileID: 0}
 --- !u!1 &1810805414
 GameObject:
   m_ObjectHideFlags: 0
