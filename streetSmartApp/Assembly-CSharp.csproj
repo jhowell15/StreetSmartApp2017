@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\openBrowserPage.cs" />
      <Compile Include="Assets\Scripts\TextInputHandler.cs" />
      <Compile Include="Assets\Scripts\UserDataSheet.cs" />
+     <Compile Include="Assets\XMLBuilder.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
