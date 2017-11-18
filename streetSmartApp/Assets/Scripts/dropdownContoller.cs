@@ -12,36 +12,136 @@ public class dropdownContoller : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        XmlDocument doc = new XmlDocument();
-        string filepath = Application.persistentDataPath + "/vehicleMaintenanceSchedules_GENERIC.xml";
-        doc.Load(filepath);
-        Debug.Log("loaded generic maintenance");
+        string fileName = "";
+        string file = "";
 
-        XmlNodeList nodeList = doc.SelectNodes("/Generic_Vehicles/Vehicle_Type");
-        List<string> stringList = new List<string>();
-        foreach (XmlNode node in nodeList)
+        WWW www;
+
+        XmlDocument doc;
+
+        file = "vehicleMaintenanceSchedules_GENERIC.xml";
+        fileName = Application.streamingAssetsPath + "/" + file;
+
+        //www = new WWW(fileName);
+        //yield return www;
+
+        doc = new XmlDocument();
+
+        try
         {
-            stringList.Add(node.Attributes.GetNamedItem("type").Value);
+            Debug.Log("file path: " + fileName);
+            //Debug.Log("www file path: " + www.text);
+            doc.Load(fileName);
+            Debug.Log("loaded generic maintenance");
+
+            XmlNodeList nodeList = doc.SelectNodes("/Generic_Vehicles/Vehicle_Type");
+            List<string> stringList = new List<string>();
+            foreach (XmlNode node in nodeList)
+            {
+                stringList.Add(node.Attributes.GetNamedItem("type").Value);
+            }
+            dropdown.AddOptions(stringList);
         }
-        dropdown.AddOptions(stringList);
-        filepath = "";
-
-        filepath = Application.persistentDataPath + "/vehicleMaintenanceSchedules_SPECIFIC.xml";
-        doc.Load(filepath);
-        Debug.Log("loaded specific maintenance");
-
-        nodeList = doc.SelectNodes("/Specific_Vehicles/Vehicle");
-        stringList = new List<string>();
-        foreach (XmlNode node in nodeList)
+        catch
         {
-            stringList.Add(node.Attributes.GetNamedItem("name").Value);
+            Debug.Log("failed generic");
         }
-        dropdown.AddOptions(stringList);
+
+
+
+        file = "vehicleMaintenanceSchedules_Specific.xml";
+        fileName = Application.streamingAssetsPath + "/" + file;
+
+        www = new WWW(fileName);
+        //yield return www;
+
+        doc = new XmlDocument();
+
+        try
+        {
+            doc.LoadXml(fileName);
+            Debug.Log("loaded specific maintenance");
+
+            XmlNodeList nodeList = doc.SelectNodes("/Specific_Vehicles/Vehicle");
+            List<string> stringList = new List<string>();
+            foreach (XmlNode node in nodeList)
+            {
+                stringList.Add(node.Attributes.GetNamedItem("name").Value);
+            }
+            dropdown.AddOptions(stringList);
+        }
+        catch
+        {
+            Debug.Log("failed specific");
+        }
+
+
+        //StartCoroutine(Init());
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    //public IEnumerator Init()
+    //{
+    //    string fileName = "";
+    //    string file = "";
 
-    }
+    //    WWW www;
+
+    //    XmlDocument doc;
+
+    //    file = "vehicleMaintenanceSchedules_GENERIC.xml";
+    //    fileName = Application.streamingAssetsPath + "/" + file;
+
+    //    www = new WWW(fileName);
+    //    //yield return www;
+
+    //    doc = new XmlDocument();
+
+    //    try
+    //    {
+    //        doc.Load(www.text);
+    //        Debug.Log("loaded generic maintenance");
+
+    //        XmlNodeList nodeList = doc.SelectNodes("/Generic_Vehicles/Vehicle_Type");
+    //        List<string> stringList = new List<string>();
+    //        foreach (XmlNode node in nodeList)
+    //        {
+    //            stringList.Add(node.Attributes.GetNamedItem("type").Value);
+    //        }
+    //        dropdown.AddOptions(stringList);
+    //    }
+    //    catch
+    //    {
+    //        Debug.Log("failed generic");
+    //    }
+
+        
+
+    //    file = "vehicleMaintenanceSchedules_Specific.xml";
+    //    fileName = Application.streamingAssetsPath + "/" + file;
+
+    //    www = new WWW(fileName);
+    //    //yield return www;
+
+    //    doc = new XmlDocument();
+
+    //    try
+    //    {
+    //        doc.LoadXml(www.text);
+    //        Debug.Log("loaded specific maintenance");
+
+    //        XmlNodeList nodeList = doc.SelectNodes("/Specific_Vehicles/Vehicle");
+    //        List<string> stringList = new List<string>();
+    //        foreach (XmlNode node in nodeList)
+    //        {
+    //            stringList.Add(node.Attributes.GetNamedItem("name").Value);
+    //        }
+    //        dropdown.AddOptions(stringList);
+    //    }
+    //    catch
+    //    {
+    //        Debug.Log("failed specific");
+    //    }
+
+    //}
 }
