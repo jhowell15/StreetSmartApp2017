@@ -1,4 +1,5 @@
 Android
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.XMLBuilder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MouseVisibleScript
 8c031bbe2fb8a36b15a6161aff8be069 Assembly-CSharp.dll:.TextInputHandler
 a965a1dacb9224c82df596dca870df76 Assembly-CSharp.dll:.openBrowserPage

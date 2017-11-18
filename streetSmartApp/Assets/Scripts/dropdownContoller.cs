@@ -13,7 +13,7 @@ public class dropdownContoller : MonoBehaviour
     void Start()
     {
         XmlDocument doc = new XmlDocument();
-        string filepath = Application.persistentDataPath + "vehicleMaintenanceSchedules_GENERIC.xml";
+        string filepath = Application.persistentDataPath + "/vehicleMaintenanceSchedules_GENERIC.xml";
         doc.Load(filepath);
         Debug.Log("loaded generic maintenance");
 
