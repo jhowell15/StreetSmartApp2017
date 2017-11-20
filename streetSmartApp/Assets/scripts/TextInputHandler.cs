@@ -30,7 +30,7 @@ public class TextInputHandler : MonoBehaviour
         string filePath = Application.persistentDataPath + "/logInInfo.txt";
         StreamWriter file = new StreamWriter(filePath);
         int vehicleTypeInt = vehicleTypeInput.value;
-        file.WriteLine(userNameInput.text + ";" + emailInput.text + ";" + addressInput.text + ";" + totalMilesInput.text + ";" + avgMilesInput.text + ";" + vehicleTypeInput.options[vehicleTypeInt].text.ToString());
+		file.WriteLine(userNameInput.text + ";" + emailInput.text + ";" + addressInput.text + ";" + totalMilesInput.text + ";" + avgMilesInput.text + ";" + vehicleTypeInput.options[vehicleTypeInt].text.ToString() + ";" + System.DateTime.UtcNow);
         file.Close();
         Debug.Log("wrote file");
     }
