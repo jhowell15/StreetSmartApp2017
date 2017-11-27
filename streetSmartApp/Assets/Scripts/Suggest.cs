@@ -48,7 +48,35 @@ public class Suggest : MonoBehaviour {
 			}
 		}
 
-		string full = "";
+        doc = new XmlDocument();
+        filepath = Application.persistentDataPath + "/vehicleMaintenanceSchedules_SPECIFIC.xml";
+        doc.Load(filepath);
+        Debug.Log("loaded specific maintenance");
+
+        nodeList = doc.SelectNodes("/Specific_Vehicles/Vehicle");
+        stringList = new List<string>();
+        stringList2 = new List<string>();
+        cnt = 0;
+        foreach (XmlNode node in nodeList)
+        {
+
+            if (node.Attributes.GetNamedItem("name").Value == fields[5])
+            {
+
+                XmlNodeList nodeList2 = node.SelectNodes("Maintenance_Schedule/Maintenance");
+                foreach (XmlNode node2 in nodeList2)
+                {
+                    if ((int.Parse(node2.Attributes.GetNamedItem("miles").Value) > (int.Parse(fields[4].ToString()) * time) + int.Parse(fields[3].ToString())) && cnt < 5)
+                    {
+                        cnt++;
+                        stringList.Add(node2.Attributes.GetNamedItem("miles").Value);
+                        stringList2.Add(node2.InnerText);
+                    }
+                }
+            }
+        }
+
+        string full = "";
 		string full2 = "";
 
 		for (int i = 0; i < cnt; i++) {
