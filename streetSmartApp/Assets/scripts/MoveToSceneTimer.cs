@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class MoveToSceneTimer : MonoBehaviour
 {
     [SerializeField] private float time;
-    [SerializeField] private string targetScene;
+    private string login = "login";
+    private string home = "vehicleInfo";
 	
 	// Update is called once per frame
 	void Update ()
@@ -15,12 +17,21 @@ public class MoveToSceneTimer : MonoBehaviour
 
         if(time <= 0.0f)
         {
-            timerEnded(targetScene);
+            timerEnded();
         }
 	}
 
-    private void timerEnded(string sceneToLoad)
+    private void timerEnded()
     {
-        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
+        try
+        {
+            StreamReader loginReader = new StreamReader(Application.persistentDataPath + "/loginInfo.txt");
+            Debug.Log("file found");
+            SceneManager.LoadScene(home, LoadSceneMode.Single);
+        }
+        catch
+        {
+            SceneManager.LoadScene(login, LoadSceneMode.Single);
+        }
     }
 }
