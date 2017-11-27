@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EmailChecker.cs" />
      <Compile Include="Assets\Scripts\dropdownContoller.cs" />
      <Compile Include="Assets\Scripts\MenuButtonScript.cs" />
      <Compile Include="Assets\Scripts\MouseVisibleScript.cs" />

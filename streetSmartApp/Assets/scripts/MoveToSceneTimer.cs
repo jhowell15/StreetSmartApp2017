@@ -27,7 +27,9 @@ public class MoveToSceneTimer : MonoBehaviour
         {
             StreamReader loginReader = new StreamReader(Application.persistentDataPath + "/loginInfo.txt");
             Debug.Log("file found");
+            loginReader.Close();
             SceneManager.LoadScene(home, LoadSceneMode.Single);
+
         }
         catch
         {
