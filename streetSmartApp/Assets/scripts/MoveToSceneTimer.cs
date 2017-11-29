@@ -24,6 +24,8 @@ public class MoveToSceneTimer : MonoBehaviour
         }
 	}
 
+    //Sends an email to the user reminding them of the next maintenance
+    //not currently used
     private void EmailReminder()
     {
         string emailAddress;
@@ -55,6 +57,7 @@ public class MoveToSceneTimer : MonoBehaviour
         return WWW.EscapeURL(url).Replace("+", "%20");
     }
 
+    //moves to the next scene when the timer ends
     private void timerEnded()
     {
         try

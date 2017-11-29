@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Written by John Hainge
+//For The University of Colorado, Colorado Springs & StreetSmart Auto Brokers
+using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 

@@ -12,7 +12,7 @@ public class dropdownContoller : MonoBehaviour
 {
     public Dropdown dropdown;
 
-    // Use this for initialization
+    //reads in the vehicles from the generic and specific xml docs and adds them to the dropdown list
     void Start()
     {
         XmlDocument doc = new XmlDocument();
@@ -40,11 +40,5 @@ public class dropdownContoller : MonoBehaviour
             stringList.Add(node.Attributes.GetNamedItem("name").Value);
         }
         dropdown.AddOptions(stringList);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

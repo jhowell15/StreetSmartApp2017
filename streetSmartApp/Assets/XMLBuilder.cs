@@ -7,7 +7,8 @@ using System.Xml;
 
 public class XMLBuilder : MonoBehaviour {
 
-	// Use this for initialization
+	//Builds the maintenance schedule xmls
+    //this is hardcoded because of file compression issues with android
 	void Start () {
         XmlDocument doc = new XmlDocument();
         XmlNode root = doc.CreateElement("Generic_Vehicles");
@@ -40,6 +41,7 @@ public class XMLBuilder : MonoBehaviour {
         Debug.Log("finished specific");
     }
 
+    //builds the suv portion of the generic xml
     private void XMLSUV(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle_Type");
@@ -150,6 +152,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the 4 door portion of the generic xml
     private void XML4DOOR(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle_Type");
@@ -260,6 +263,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the 2 door portion of the generic xml
     private void XML2DOOR(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle_Type");
@@ -370,6 +374,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the station wagon portion of the generic xml
     private void XMLWAGON(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle_Type");
@@ -515,6 +520,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the sports car portion of the generic xml
     private void XMLSPORTS(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle_Type");
@@ -630,6 +636,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the minivan portion of the generic xml
     private void XMLMINIVAN(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle_Type");
@@ -750,6 +757,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the pickup truck portion of the generic xml
     private void XMLPICKUP(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle_Type");
@@ -870,6 +878,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the 4 runner portion of the specific xml
     private void XML4RUNNER(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle");
@@ -992,6 +1001,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the camry portion of the specific xml
     private void XMLCAMRY(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle");
@@ -1114,6 +1124,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the outback portion of the specific xml
     private void XMLOUTBACK(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle");
@@ -1271,6 +1282,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the f150 portion of the specific xml
     private void XMLF150(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle");
@@ -1403,6 +1415,7 @@ public class XMLBuilder : MonoBehaviour {
         maintenanceScheduleNode.AppendChild(maintenance);
     }
 
+    //builds the odessey portion of the specific xml
     private void XMLODESSEY(XmlDocument doc, XmlNode root)
     {
         XmlElement node = doc.CreateElement("Vehicle");
