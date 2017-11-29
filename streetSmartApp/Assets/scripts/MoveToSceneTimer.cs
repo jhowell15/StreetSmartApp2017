@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Written by Jacob Howell
+//For The University of Colorado, Colorado Springs & StreetSmart Auto Brokers
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -60,7 +62,7 @@ public class MoveToSceneTimer : MonoBehaviour
             StreamReader loginReader = new StreamReader(Application.persistentDataPath + "/loginInfo.txt");
             Debug.Log("file found");
             loginReader.Close();
-            EmailReminder();
+            //EmailReminder();
             SceneManager.LoadScene(home, LoadSceneMode.Single);
 
         }

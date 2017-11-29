@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Written by William Forrest
+//With Code from Jacob Howell
+//For The University of Colorado, Colorado Springs & StreetSmart Auto Brokers
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
