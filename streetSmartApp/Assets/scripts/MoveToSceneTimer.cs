@@ -41,7 +41,7 @@ public class MoveToSceneTimer : MonoBehaviour
         Debug.Log("email address post edit: " + emailAddress);
 
         string emailSubject = MyEscapeURL("StreetSmart App Email Test");
-        string emailBody = MyEscapeURL("IT WORKS GOD DAMMIT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        string emailBody = MyEscapeURL("test test test");
 
         Debug.Log("mailto:" + emailAddress + "?subject=" + emailSubject + "&body=" + emailBody);
 

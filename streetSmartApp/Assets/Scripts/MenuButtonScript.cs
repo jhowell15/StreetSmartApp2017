@@ -7,16 +7,15 @@ using UnityEngine.SceneManagement;
 public class MenuButtonScript : MonoBehaviour
 {
     /// <summary>
-    /// load the editvehicle info
+    /// loads the edit vehicle info scene, this method is called when that corresponding button is pressed 
     /// </summary>
-	public void LoadEditVehicleInfo()
+    public void LoadEditVehicleInfo()
 	{
 		SceneManager.LoadScene("EditVehicleInfo", LoadSceneMode.Single);
 	}
 
-
     /// <summary>
-    /// load the links page 
+    /// loads the links scene, this method is called when that corresponding button is pressed
     /// </summary>
     public void LoadLinks()
     {
@@ -24,7 +23,7 @@ public class MenuButtonScript : MonoBehaviour
     }
 
     /// <summary>
-    /// load the login page 
+    /// loads the login scene, this method is called when that corresponding button is pressed
     /// </summary>
     public void LoadLogin()
     {
@@ -32,21 +31,23 @@ public class MenuButtonScript : MonoBehaviour
     }
 
     /// <summary>
-    /// load splash screen 
+    /// loads the splash screen scene, this is the scene when the app opens, so having a method call to it is a bit redendant
     /// </summary>
     public void LoadSplashScreen()
     {
         SceneManager.LoadScene("splashScreen", LoadSceneMode.Single);
     }
 
+    /// <summary>
+    /// loads the vehicle info scene, this method is called when that corresponding button is pressed
+    /// </summary>
     public void LoadVehicleInfo()
     {
         SceneManager.LoadScene("VehicleInfo", LoadSceneMode.Single);
     }
 
-
     /// <summary>
-    /// quit the app 
+    /// quits the app when the corresponding button is pressed 
     /// </summary>
     public void Quit()
     {
